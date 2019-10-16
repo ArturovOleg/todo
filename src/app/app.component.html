@@ -1,0 +1,56 @@
+<h1 class="title">{{ title }}</h1>
+<div class="add-todo-component">
+  <input
+    type="text"
+    class="add-input"
+    #newTodo
+    (keyup.enter)="addNewTodo(newTodo.value); newTodo.value = ''"
+  />
+  <button
+    class="add-button"
+    (click)="addNewTodo(newTodo.value); newTodo.value = ''"
+  >
+    add
+  </button>
+</div>
+
+<div class="table-wrapper">
+  <div
+    class="table-head"
+    [ngClass]="{ 'table-head-with-data': todos.length != 0 }"
+  >
+    <span class="table-data">Label</span>
+    <span class="table-data">Priority</span>
+    <span class="table-data">Done</span>
+    <span class="table-data">Actons</span>
+  </div>
+  <div class="table-row" *ngFor="let todo of todos; index as i">
+    <div class="table-data" (click)="redactLabel(todo)">
+      <span *ngIf="!todo.variableForRed">{{ todo.label }}</span>
+      <input
+        *ngIf="todo.variableForRed"
+        class="red-input"
+        type="text"
+        #redactLabel
+        (keyup.enter)="changeLabel(redactLabel.value, todo)"
+      />
+    </div>
+    <div class="table-data">
+      <select class="priority-select">
+        <option *ngFor="let prior of priorities">{{ prior }}</option>
+      </select>
+    </div>
+    <div class="table-data in-progress" [ngClass]="{ done: todo.done }">
+      {{ todo.done ? "&#10003;" : "&#10005;" }}
+    </div>
+    <div class="table-data">
+      <button (click)="deleteTodo(todo)" class="del-btn">del</button>
+      <button *ngIf="!todo.done" (click)="done(todo)" class="done-btn">
+        Done
+      </button>
+      <button *ngIf="todo.done" (click)="inProcess(todo)" class="back-btn">
+        Back
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: #757575;
+}
+
+.add-todo-component {
+  display: flex;
+  justify-content: center;
+}
+
+.add-input {
+  width: 250px;
+  height: 35px;
+  border-radius: 10px 0px 0px 10px;
+  box-shadow: none;
+  border: 1px solid lightgray;
+  outline: none;
+  padding-left: 10px;
+}
+
+.add-button {
+  text-transform: uppercase;
+  border-radius: 0px 10px 10px 0px;
+  border: none;
+  min-width: 50px;
+  background-color: lightskyblue;
+  border: 1px solid lightblue;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.table-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.table-head {
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+  border: 1px solid #a5a3a3;
+  border-radius: 7px;
+  background-color: lightgray;
+  color: #868585;
+}
+
+.table-head-with-data {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.table-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  padding: 10px;
+  border-right: 1px solid #868585;
+  cursor: pointer;
+  min-height: 50px;
+}
+
+.table-data:last-child {
+  border-right: none;
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+  border: 1px solid #868585;
+  color: #757575;
+}
+
+.table-row:last-child {
+  border-radius: 0px 0px 10px 10px;
+}
+
+.table-head + .table-row {
+  border-top: none;
+}
+
+.table-row + .table-row {
+  border-top: none;
+}
+
+.red-input {
+  width: 200px;
+  min-height: 30px;
+  padding-left: 5px;
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.priority-select {
+  width: 200px;
+  min-height: 30px;
+  padding-left: 5px;
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.del-btn {
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 10px 0px 0px 10px;
+  border: 1px solid lightcoral;
+  background-color: lightcoral;
+  height: 100%;
+  width: 53px;
+  cursor: pointer;
+}
+
+.done-btn {
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 0px 10px 10px 0px;
+  background-color: lightskyblue;
+  border: 1px solid lightblue;
+  height: 100%;
+  width: 53px;
+  cursor: pointer;
+  outline: none;
+}
+
+.back-btn {
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 0px 10px 10px 0px;
+  background-color: lightgreen;
+  border: 1px solid lightgreen;
+  height: 100%;
+  width: 53px;
+  cursor: pointer;
+  outline: none;
+}
+
+.in-progress {
+  color: #000;
+}
+
+.done {
+  color: chartreuse;
+  font-weight: bold;
+}
