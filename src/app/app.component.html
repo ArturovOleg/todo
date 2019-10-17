@@ -4,11 +4,11 @@
     type="text"
     class="add-input"
     #newTodo
-    (keyup.enter)="addNewTodo(newTodo.value); newTodo.value = ''"
+    (keyup.enter)="addNewTodo(newTodo.value); newTodo.value = ''; saveTasks()"
   />
   <button
     class="add-button"
-    (click)="addNewTodo(newTodo.value); newTodo.value = ''"
+    (click)="addNewTodo(newTodo.value); newTodo.value = ''; saveTasks()"
   >
     add
   </button>
