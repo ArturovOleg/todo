@@ -30,9 +30,10 @@ export class AppComponent implements OnInit {
       done: false,
       variableForRed: false
     };
-
-    this.todos.push(newTodoItem);
-    this.saveTasks();
+    if(newTodo !== "") {
+      this.todos.push(newTodoItem);
+      this.saveTasks();
+    }
   }
 
   public deleteTodo(todo) {
@@ -68,7 +69,6 @@ export class AppComponent implements OnInit {
   public saveTasks() {
     let createdTasksArr = [];
     this.todos.forEach(item => createdTasksArr.push(item));
-    console.log(createdTasksArr)
     localStorage.removeItem("todo");
     localStorage.setItem(
       "todo",
@@ -85,8 +85,6 @@ export class AppComponent implements OnInit {
   public changePrior(event, todo) {
     const newVal = event.target.value;
     todo.priority = newVal;
-    console.log(newVal);
-    console.log(todo);
     this.saveTasks();
   }
 }
