@@ -36,8 +36,8 @@
       />
     </div>
     <div class="table-data">
-      <select class="priority-select">
-        <option *ngFor="let prior of priorities">{{ prior }}</option>
+      <select class="priority-select" (change)="changePrior($event, todo)" [value]="todo.priority">
+        <option *ngFor="let prior of priorities" [value]="prior">{{ prior }}</option>
       </select>
     </div>
     <div class="table-data in-progress" [ngClass]="{ done: todo.done }">
